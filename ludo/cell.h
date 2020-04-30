@@ -3,26 +3,19 @@
 
 #include <QColor>
 #include <QGraphicsItem>
+#include "shape.h"
 
-class Cell : public QObject, public QGraphicsItem {
-    Q_OBJECT
+class Cell : public Shape{
 
 public:
-    Cell(QColor color, const int x, const int y, const int width_);
-    QRectF boundingRect() const override;
-    QPainterPath shape() const override;
+    Cell(QColor color, const int x, const int y, const int width):
+        Shape(color, x, y, width){
+    }
 
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget) override;
+//    friend bool operator==(const Cell &first, const Cell &other);
 
-private:
-    int x_;
-    int y_;
-    QColor color_;
-    int width_;
-    friend bool operator==(const Cell &first, const Cell &other);
-
-protected:
-    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+//protected:
+//    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
 
 };
 

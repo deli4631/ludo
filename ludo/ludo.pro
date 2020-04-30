@@ -18,15 +18,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     ludo.cpp \
-    cell.cpp  \
-    pawn.cpp  \
-    player.cpp
+    cell.cpp \
+    pawn.cpp \
+    player.cpp \
 
 HEADERS += \
     ludo.h \
     cell.h  \
     pawn.h  \
-    player.h
+    player.h \
+    shape.h \
 
 FORMS += \
     ludo.ui
