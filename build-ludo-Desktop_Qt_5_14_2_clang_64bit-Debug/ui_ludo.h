@@ -12,8 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -24,6 +26,8 @@ class Ui_ludo
 public:
     QWidget *centralwidget;
     QGraphicsView *playingField;
+    QPushButton *pushButton;
+    QLabel *turnLabel;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -37,6 +41,12 @@ public:
         playingField = new QGraphicsView(centralwidget);
         playingField->setObjectName(QString::fromUtf8("playingField"));
         playingField->setGeometry(QRect(150, 30, 550, 550));
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(720, 280, 112, 32));
+        turnLabel = new QLabel(centralwidget);
+        turnLabel->setObjectName(QString::fromUtf8("turnLabel"));
+        turnLabel->setGeometry(QRect(720, 30, 131, 16));
         ludo->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ludo);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -54,6 +64,8 @@ public:
     void retranslateUi(QMainWindow *ludo)
     {
         ludo->setWindowTitle(QCoreApplication::translate("ludo", "ludo", nullptr));
+        pushButton->setText(QCoreApplication::translate("ludo", "Roll", nullptr));
+        turnLabel->setText(QCoreApplication::translate("ludo", "Player Turn: 1", nullptr));
     } // retranslateUi
 
 };

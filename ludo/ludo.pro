@@ -21,6 +21,7 @@ SOURCES += \
     cell.cpp \
     pawn.cpp \
     player.cpp \
+    shape.cpp \
 
 HEADERS += \
     ludo.h \
